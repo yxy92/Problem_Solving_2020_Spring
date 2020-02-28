@@ -2,8 +2,8 @@
 
 from mesa.visualization.ModularVisualization import ModularServer
 from mesa.visualization.modules import CanvasGrid, ChartModule
-from .agent import Bacteria
-from .model import Bacteria_Colony
+from agent import Bacteria
+from model import Bacteria_Colony
 
 def Bacteria_portrayal(agent):
     portrayal = {}

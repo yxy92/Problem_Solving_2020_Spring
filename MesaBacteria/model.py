@@ -4,7 +4,7 @@ from mesa.space import MultiGrid
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
 import random
-from .agent import Bacteria
+from agent import Bacteria
 
 
 class Bacteria_Colony(Model):
