@@ -4,11 +4,11 @@ from mesa.space import MultiGrid
 from mesa.time import RandomActivation
 from mesa.datacollection import DataCollector
 import random
-from agent import Bacteria
+from MesaBacteria.agent import Bacteria
 
 
 class Bacteria_Colony(Model):
-    def __init__(self,N,width,height):
+    def __init__(self,N=100,width=10,height=10):
 
         self.num_agents = N
         self.width =width
