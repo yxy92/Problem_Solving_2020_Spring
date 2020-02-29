@@ -12,21 +12,21 @@ def Bacteria_portrayal(agent):
                  "Filled": "true",
                  "Layer": 0,
                  "Color": "red",
-                 "r": 0.5}
+                 "r": agent.volume}
 
     elif agent.state == 1:
         portrayal = {"Shape": "circle",
                  "Filled": "true",
                  "Layer": 0,
                  "Color": "yellow",
-                 "r": 0.5}
+                 "r": agent.volume}
 
     else:
         portrayal = {"Shape": "circle",
                  "Filled": "true",
                  "Layer": 0,
                  "Color": "blue",
-                 "r": 0.5}
+                 "r": agent.volume}
     return portrayal
 
 
