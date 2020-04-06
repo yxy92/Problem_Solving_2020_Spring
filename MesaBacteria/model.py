@@ -7,8 +7,9 @@ import random
 from MesaBacteria.agent import Bacteria
 
 
+
 class Bacteria_Colony(Model):
-    def __init__(self,N=100,width=10,height=10):
+    def __init__(self,N=100,width=10,height=10,infected_rate=0.01):
 
         self.num_agents = N
         self.width =width
@@ -31,7 +32,11 @@ class Bacteria_Colony(Model):
             # randomly assign the agent to a cell
             coords = random.choice(coords_list)
             #print(coords)
-            state = random.choice([0,1,2])
+            p = random.uniform(0,1)
+            if p<infected_rate:
+                state = 1
+            else:
+                state = 0
             a = Bacteria(i,self,state)
             self.grid.place_agent(a, coords)
             self.schedule.add(a)
@@ -42,6 +47,10 @@ class Bacteria_Colony(Model):
     def step(self):
         self.schedule.step()
         self.datacollector.collect(self)
+        #print(self.num_agents)
+        #print(self.count_head(0))
+        #print(self.count_head(1))
+        #print(self.count_head(2))
 
     def run_model(self,step_count=200):
         for i in range(step_count):
